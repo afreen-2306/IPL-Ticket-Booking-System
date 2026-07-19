@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-success text-white text-center">
+
+                    <h3>Book IPL Ticket</h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h4 class="text-center">
+
+                        {{ match.team1 }} vs {{ match.team2 }}
+
+                    </h4>
+
+                    <hr>
+
+                    <p><strong>Stadium:</strong> {{ match.stadium }}</p>
+
+                    <p><strong>Date:</strong> {{ match.match_date }}</p>
+
+                    <p><strong>Time:</strong> {{ match.match_time }}</p>
+
+                    <p><strong>Ticket Price:</strong> ₹{{ match.price }}</p>
+
+                    <p><strong>Available Seats:</strong> {{ match.available_seats }}</p>
+
+                    <form method="POST">
+
+                        <!-- Match Details -->
+
+                        <!-- Seat Category Dropdown -->
+
+                        <div class="mb-3">
+                            <label><b>Select Seat Category</b></label>
+
+                            <select class="form-select" name="seat_category" required>
+                                <option value="">-- Select Category --</option>
+                                <option value="Business">🏆 Business Class (₹3000)</option>
+                                <option value="Premium">🥈 Premium (₹2000)</option>
+                                <option value="Standard">🥉 Standard (₹1000)</option>
+                            </select>
+                        </div>
+
+                        <!-- Hidden Input -->
+
+                        <input type="hidden" name="seat_number" id="seat_number">
+
+                        <!-- Screen -->
+
+                        <div class="screen">
+                            SCREEN
+                        </div>
+
+                        <!-- 👇 BUSINESS CLASS GOES HERE -->
+
+                        <h5 class="mt-4 text-danger">🏆 Business Class</h5>
+                        <div class="seat-row" id="businessRow">
+                            {% for i in range(1,11) %}
+                            <button type="button" class="seat-btn" data-seat="A{{ i }}">
+                                A{{ i }}
+                            </button>
+                            {% endfor %}
+                        </div>
+
+                        <h5 class="mt-4 text-primary">🥈 Premium</h5>
+                        <div class="seat-row" id="premiumRow">
+                            {% for i in range(1,11) %}
+                            <button type="button" class="seat-btn" data-seat="B{{ i }}">
+                                B{{ i }}
+                            </button>
+                            {% endfor %}
+                        </div>
+
+                        <h5 class="mt-4 text-success">🥉 Standard</h5>
+                        <div class="seat-row" id="standardRow">
+                            {% for i in range(1,11) %}
+                            <button type="button" class="seat-btn" data-seat="C{{ i }}">
+                                C{{ i }}
+                            </button>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Quantity -->
+
+                        <input type="hidden" name="quantity" id="quantity" value="0">
+
+                        <div class="mt-3">
+                            <h5>Selected Seats:</h5>
+                            <p id="selectedSeats">None</p>
+
+                            <h5>Total Tickets:</h5>
+                            <p id="ticketCount">0</p>
+
+                            <h5>Total Price:</h5>
+                            <p id="totalPrice">₹0</p>
+                        </div>
+
+                        <!-- Confirm Button -->
+
+                        <button class="btn btn-warning mt-3">
+                            🎟 Confirm Booking
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

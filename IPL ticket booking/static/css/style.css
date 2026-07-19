@@ -1,0 +1,147 @@
+body{
+    background:#f4f6f9;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#0d1b2a !important;
+}
+
+.navbar-brand{
+    font-weight:bold;
+    font-size:25px;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:15px;
+}
+
+.nav-link:hover{
+    color:#ffc107 !important;
+}
+
+/* Hero */
+
+section{
+    border-radius:10px;
+}
+
+.display-3{
+    font-weight:bold;
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card-header{
+    font-weight:bold;
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:8px;
+}
+
+/* Tables */
+
+table{
+    background:white;
+}
+
+/* Footer */
+
+footer{
+    background:#0d1b2a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+/* Screen */
+
+.screen{
+    width:100%;
+    background:#343a40;
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-weight:bold;
+    margin:20px 0;
+    border-radius:8px;
+}
+
+/* Seat Rows */
+
+.seat-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+/* Seat Button */
+
+.seat-btn{
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:8px;
+    background:#28a745;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.seat-btn:hover{
+    transform:scale(1.05);
+}
+
+/* Selected Seat */
+
+.selected-seat{
+    background:#ffc107 !important;
+    color:black;
+}
+
+/* Booked Seat */
+
+.booked-seat{
+    background:red !important;
+    cursor:not-allowed;
+}
+.seat-btn:disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.selected-seat {
+    background: #ffc107 !important;
+    color: black;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer {
+    margin-top: auto;
+}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Upcoming IPL Matches</h2>
+
+    <div class="row">
+
+        {% for match in matches %}
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow-ig h-100">
+
+                <div class="card-body">
+
+                    <h4 class="text-center text-danger fw-bold">
+                        {{ match.team1 }} vs {{ match.team2 }}
+                    </h4>
+
+                    <hr>
+
+                    <p><strong>Stadium:</strong> {{ match.stadium }}</p>
+
+                    <p><strong>Date:</strong> {{ match.match_date }}</p>
+
+                    <p><strong>Time:</strong> {{ match.match_time }}</p>
+
+                    <p><strong>Price:</strong> ₹{{ match.price }}</p>
+
+                    <p><strong>Available Seats:</strong> {{ match.available_seats }}</p>
+
+                    <div class="d-grid">
+
+                        <a href="/book/{{ match.id }}"
+                            class="btn btn-warning text-dark fw-bold">
+
+                                🎟 Book Ticket
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
